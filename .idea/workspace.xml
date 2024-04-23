@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38ce2144-b4c4-4fa1-aa97-11c7a95fd936" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/GuessNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HomeWork_2.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +41,16 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.GuessNumber">
+  <component name="RunManager" selected="Application.GuessWord">
     <configuration name="GuessNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GuessNumber" />
+      <module name="hw1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GuessWord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GuessWord" />
       <module name="hw1" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -67,6 +72,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GuessWord" />
         <item itemvalue="Application.GuessNumber" />
         <item itemvalue="Application.HomeWork_3" />
         <item itemvalue="Application.TicTacToe" />
