@@ -1,14 +1,21 @@
 public class App {
     public static void main(String[] args) {
-        Dog dog1 = new Dog("Sharik", 500, 0.5, 10);
-        Cat cat1 = new Cat("Murka", 200, 2, 0);
+        Cat[] cats = {new Cat("Murka", 50), new Cat("Martin2", 300)};
+        Plate plate = new Plate(100);
 
-        dog1.run(400);
-        dog1.jump(0.6);
-        dog1.swim(5);
+        plate.info();
+        plate.fillMax();
+        plate.info();
 
-        cat1.run(250);
-        cat1.jump(1.5);
-        cat1.swim(3);
+        for (Cat cat : cats) {
+            cat.eat(plate);
+            cat.printInfo();
+        }
+        System.out.print("After cats ate food: ");
+        plate.info();
+
+        plate.addFood(15);
+        plate.info();
     }
+
 }
