@@ -1,10 +1,10 @@
-public class Cat implements Competitor {
+public class Human implements Competitor {
 
     private String name;
     private int maxRunDistance;
     private int maxJumpHeight;
 
-    public Cat(String name, int maxRunDistance, int maxJumpHeight) {
+    public Human(String name, int maxRunDistance, int maxJumpHeight) {
         this.name = name;
         this.maxRunDistance = maxRunDistance;
         this.maxJumpHeight = maxJumpHeight;

@@ -1,15 +1,14 @@
-public class Cat implements Competitor {
+public class Robot implements Competitor {
 
     private String name;
     private int maxRunDistance;
     private int maxJumpHeight;
 
-    public Cat(String name, int maxRunDistance, int maxJumpHeight) {
+    public Robot(String name, int maxRunDistance, int maxJumpHeight) {
         this.name = name;
         this.maxRunDistance = maxRunDistance;
         this.maxJumpHeight = maxJumpHeight;
     }
-
 
     @Override
     public boolean run(int distance) {
