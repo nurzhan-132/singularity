@@ -1,27 +1,68 @@
 public class Main {
     public static void main(String[] args) {
-        Human human1 = new Human("Nurzhan", 500, 5);
-        Cat cat1 = new Cat("Barsik", 1000, 3);
-        Robot robot1 = new Robot("GPT", 5000, 10);
+        String[][] correctArray = {
+                {"1", "2", "3", "4"},
+                {"5", "6", "7", "8"},
+                {"9", "10", "11", "12"},
+                {"13", "14", "15", "16"}
+        };
 
-        RunningRoad road = new RunningRoad(5000);
-        Wall wall = new Wall(5);
+        String[][] sizeExceptionArr = {
+                {"1", "2", "3", "4"},
+                {"9", "10", "11", "12"},
+                {"13", "14", "15", "16"},
+                {"5", "6", "7"}
+        };
 
-        Competitor[] competitors = {human1, cat1, robot1};
-        Obstacle[] obstacles = {road, wall};
+        String[][] dataExceptionArr = {
+                {"1", "2", "3", "4"},
+                {"5", "6", "7", "8"},
+                {"9", "10", "I", "12"},
+                {"13", "14", "15", "16"}
+        };
 
-        for(Competitor competitor : competitors) {
-            boolean passed = true;
-            for(Obstacle obstacle : obstacles) {
-                if(!obstacle.canPassObstacle(competitor)) {
-                    passed = false;
-                    System.out.println(competitor.getName() + " не смог пройти все препятствия");
-                    break;
-                }
-            }
-            if(passed) {
-                System.out.println(competitor.getName() + " смог пройти все препятствия!");
+        try {
+            int result = sumArr(correctArray);
+            System.out.println("Сумма массива: " + result);
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.err.println(e.getMessage());
+        }
+
+        try {
+            int result = sumArr(sizeExceptionArr);
+            System.out.println("Сумма массива: " + result);
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.err.println(e.getMessage());
+        }
+
+        try {
+            int result = sumArr(dataExceptionArr);
+            System.out.println("Сумма массива: " + result);
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public static int sumArr(String[][] arr) throws MyArraySizeException, MyArrayDataException {
+        if (arr.length != 4) {
+            throw new MyArraySizeException("The size of an array should be: 4х4");
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].length != 4) {
+                throw new MyArraySizeException("The size of an array should be: 4х4");
             }
         }
+
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                try {
+                    sum += Integer.parseInt(arr[i][j]);
+                } catch (NumberFormatException e) {
+                    System.err.println(new MyArrayDataException(i, j, arr[i][j]).getMessage());
+                }
+            }
+        }
+        return sum;
     }
 }
